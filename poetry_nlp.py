@@ -10,6 +10,8 @@ class poetry_reader:
     def __init__(self, book_path):
         self.book_path = book_path
         self.file = open(self.book_path)
+        self.book_name = ''
+        self.author = ''
 
     def __del__(self):
         self.file.close()
@@ -41,4 +43,8 @@ class poetry_reader:
 
 
 if __name__ == '__main__':
-    p_reader = poetry_reader(SONGS_OF_INNOCENCE_SONGS_OF_EXPERIENCE_PATH)
+    p_reader_WBlake = poetry_reader(SONGS_OF_INNOCENCE_SONGS_OF_EXPERIENCE_PATH)
+    p_reader_WBlake.get_poems_from_book()
+    p_reader_WWhitman = poetry_reader(LEAVES_OF_GRASS_PATH)
+    p_reader_WWhitman.get_poems_from_book()
+
